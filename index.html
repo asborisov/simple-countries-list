@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simple country list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<!--[if lt IE 9]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<div ng-controller="mainCtrl" ng-init="countries = ['Россия', 'Украина', 'США', 'Франция', 'Германия', 'Китай']">
+    <country-list countries-list="countries" selected-countries="selectedCountries"></country-list>
+</div>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="app/app.js"></script>
+<script src="app/components/countries/countries.js"></script>
+<script src="app/components/countries/directives/countryList.js"></script>
+
+<script type="text/javascript">
+    (function () {
+        // Для демонстрации
+        angular.module('test')
+                .controller('mainCtrl', ['$scope',
+                    function mainCtrl($scope) {
+                        // Список выбранных стран
+                        $scope.selectedCountries = ['Россия'];
+                        // Вывод списка выбранных стран в консоль
+                        $scope.$watch('selectedCountries', function (newValue) {
+                            console.log(newValue);
+                        }, true);
+                    }]);
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "angular-countries",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Test case",
+  "repository": "https://github.com/",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "gulp": "^3.8.11",
+    "gulp-webserver": "^0.9.1",
+    "jquery": "^2.1.4"
+  }
+}
